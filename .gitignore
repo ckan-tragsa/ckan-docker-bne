@@ -15,6 +15,7 @@ metadata/*
 !metadata/README.md
 src/*
 !src/README.md
+!src/clone_repos.sh
 
 # environment
 .env

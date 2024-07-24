@@ -8,4 +8,5 @@ ckan config-tool $CKAN_INI \
      "ckanext.pages.group = $CKANEXT__PAGES__GROUP" \
      "ckanext.pages.about_menu = $CKANEXT__PAGES__ABOUT_MENU" \
      "ckanext.pages.group_menu = $CKANEXT__PAGES__GROUP_MENU" \
-     "ckanext.pages.organization_menu = $CKANEXT__PAGES__ORGANIZATION_MENU"
+     "ckanext.pages.organization_menu = $CKANEXT__PAGES__ORGANIZATION_MENU" \
+     "ckanext.pages.editor = $CKANEXT__PAGES__EDITOR"
