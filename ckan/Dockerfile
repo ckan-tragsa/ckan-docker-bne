@@ -62,6 +62,10 @@ RUN echo ${TZ} > /etc/timezone && \
     echo "mjanez/ckanext-schemingdcat" && \
     pip3 install --no-cache-dir -e git+https://github.com/mjanez/ckanext-schemingdcat.git@v4.2.3#egg=ckanext_schemingdcat && \
     pip3 install --no-cache-dir -r ${APP_DIR}/src/ckanext-schemingdcat/requirements.txt && \
+    echo "NaturalHistoryMuseum/ckanext-contact" && \
+    pip3 install --no-cache-dir -e git+https://github.com/NaturalHistoryMuseum/ckanext-contact.git@v2.4.1#egg=ckanext-contact && \
+    echo "OpenDataGIS/ckanext-bne" && \
+    pip3 install --no-cache-dir -e git+https://github.com/OpenDataGIS/ckanext-bne.git@release-v1.0.0#egg=ckanext-bne && \
     # Remove system cache
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*

@@ -1,0 +1,2 @@
+ckantools>=0.3.0
+pyisemail==2.0.1
