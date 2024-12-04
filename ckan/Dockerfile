@@ -24,6 +24,7 @@ COPY req_fixes req_fixes
 ## Fluent - v1.0.1  (mjanez/Forked stable version) ##
 ## OpenAPI - v1.0.0 (mjanez stable version) ##
 ## Scheming DCAT - v4.2.3 (mjanez/GeoDCAT-AP/NTI-RISP extended version) ##
+## BNE - v1.0.0 (OpenDataGIS/API datos.abiertos) ##
 RUN echo ${TZ} > /etc/timezone && \
     if ! [ /usr/share/zoneinfo/${TZ} -ef /etc/localtime ]; then cp /usr/share/zoneinfo/${TZ} /etc/localtime; fi && \
     # Install patch utility
@@ -62,6 +63,10 @@ RUN echo ${TZ} > /etc/timezone && \
     echo "mjanez/ckanext-schemingdcat" && \
     pip3 install --no-cache-dir -e git+https://github.com/mjanez/ckanext-schemingdcat.git@v4.2.3#egg=ckanext_schemingdcat && \
     pip3 install --no-cache-dir -r ${APP_DIR}/src/ckanext-schemingdcat/requirements.txt && \
+    echo "NaturalHistoryMuseum/ckanext-contact" && \
+    pip3 install --no-cache-dir -e git+https://github.com/NaturalHistoryMuseum/ckanext-contact.git@v2.4.1#egg=ckanext-contact && \
+    echo "OpenDataGIS/ckanext-bne" && \
+    pip3 install --no-cache-dir -e git+https://github.com/OpenDataGIS/ckanext-bne.git@v1.0.0#egg=ckanext-bne && \
     # Remove system cache
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*

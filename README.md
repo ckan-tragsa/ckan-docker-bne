@@ -107,6 +107,8 @@ more information.
 ### Install docker-engine
 Follow the [installation instructions](https://docs.docker.com/get-docker/) for your environment to install Docker Engine.
 
+  - [RHEL 8/9](https://docs.docker.com/engine/install/rhel/)
+
 To verify a successful Docker installation, run `docker run hello-world` and `docker version`. These commands should output 
 versions for client and server.
 

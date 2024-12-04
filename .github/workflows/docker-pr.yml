@@ -11,7 +11,7 @@ on:
 
 env:
     REGISTRY: ghcr.io
-    IMAGE_NAME: ckan-docker
+    IMAGE_NAME: ckan-docker-bne
     CONTEXT: .
     BRANCH: ${{ github.head_ref }}
     DOCKERFILE_PATH: /ckan
