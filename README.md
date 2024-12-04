@@ -89,7 +89,7 @@ Information about extensions installed in the `main` image. More info described 
 | Extension   | [ckanext-geoview](https://github.com/ckan/ckanext-geoview)                              | 0.0.20      | Stable                    | ✔️      | ✔️      | Stable installation.                                                                                                                                                                                                                                                                                                                                                    |
 | Extension   | [ckanext-spatial](https://github.com/ckan/ckanext-spatial)                              | v2.1.1       | Stable                    | ✔️      | ✔️      | Stable installation, required for implementing custom harvesters: ([ckanext-schemingdcat/harvesters](https://github.com/mjanez/ckanext-schemingdcat?tab=readme-ov-file#harvesters))                                                                                                                                                                                                                                                                  |
 | Extension   | [ckanext-dcat](https://github.com/mjanez/ckanext-dcat)                                  | v1.8.0       | 🚧 WIP                    | ✔️      | ✔️      | Latest stable version of vanilla [`ckanext-dcat`](https://github.com/ckan/ckanext-dcat) with minor fixes, includes base DCAT-AP 2/3 profiles extended by [`ckanext-schemingdcat`](https://github.com/mjanez/ckanext-schemingdcat)  |
-| Extension   | [ckanext-scheming](https://github.com/ckan/ckanext-scheming)                          | release-3.0.0       | Stable                          | ✔️      | ✔️      | Provides a way to configure and share metadata schemas using a YAML or JSON schema description. Custom validation and template snippets for editing and display are supported.  |
+| Extension   | [ckanext-scheming](https://github.com/ckan/ckanext-scheming)                          | release-3.0.0       | Stable                          | ✔️      | ✔️      | Provides a way torfigure and share metadata schemas using a YAML or JSON schema description. Custom validation and template snippets for editing and display are supported.  |
 | Extension   | [ckanext-resourcedictionary](https://github.com/OpenDataGIS/ckanext-resourcedictionary) | v1.0.1        | 🚧 WIP                    | ✔️      | ✔️      | This extension extends the default CKAN Data Dictionary functionality by adding possibility to create data dictionary before actual data is uploaded to datastore.                                                                                                                                                                                 |
 | Extension   | [ckanext-pages](https://github.com/ckan/ckanext-pages)                                  | v0.5.2       | Stable                    | ✔️      | ✔️      | This extension gives you an easy way to add simple pages to CKAN.                                                                                                                                                                                                                                                                                  |
 | Extension   | [ckanext-pdfview](https://github.com/ckan/ckanext-pdfview)                              | 0.0.8       | Stable                    | ✔️      | ✔️      | This extension provides a view plugin for PDF files using an html object tag.                                                                                                                                                                                                                                                                      |
@@ -112,6 +112,25 @@ versions for client and server.
 
 > [!NOTE]
 > Learn more about [Docker/Docker Compose](#docker-basic-commands) basic commands.
+
+
+## Environment: Podman
+### podman compose *vs* podman compose
+All Podman Compose commands in this README will use the `podman compose` command. Podman Compose is a tool used to manage multi-container applications with Podman, similar to Docker Compose. Please see [Podman Compose](https://github.com/containers/podman compose) for more information.
+
+### Install Podman
+Follow the [installation instructions](https://podman.io/getting-started/installation) for your environment to install Podman.
+
+```sh
+sudo dnf install podman
+
+sudo dnf install podman compose
+```
+
+To verify a successful Podman installation, run `podman run hello-world` and `podman version`. These commands should output versions for client and server.
+
+> [!NOTE]
+> Learn more about [Podman/Podman Compose](https://podman.io/getting-started/installation) basic commands.
 
 
 ## Install (build and run) CKAN plus dependencies
@@ -159,6 +178,11 @@ Use this if you are a maintainer and will not be making code changes to CKAN or 
     docker compose build 
     ```
 
+    or `podman compose`:
+    ```bash
+    podman compose build
+    ```
+
 > [!NOTE]
 > You can use a [deploy in 5 minutes](#quick-mode) if you just want to test the package. 
 
@@ -167,13 +191,36 @@ Use this if you are a maintainer and will not be making code changes to CKAN or 
     docker compose up
     ```
 
+    or `podman compose`:
+    ```bash
+    podman compose up
+    ```
+
 This will start up the containers in the current window. By default the containers will log direct to this window with each container
 using a different colour. You could also use the -d "detach mode" option ie: `docker compose up -d` if you wished to use the current 
 window for something else.
 
+  or `podman compose`:
+
+  ```bash
+  podman compose up -d
+  ```
+
 > [!NOTE]
 > * Or `docker compose up --build` to build & up the containers.
-> * Or `docker compose -f ./samples/docker-compose/docker-compose.apache.yml up -d --build` to use the Apache HTTP Server version.
+> * Or `docker compose -f 
+
+docker-compose.apache.yml
+
+ up -d --build` to use the Apache HTTP Server version.
+> * or `podman compose`:
+>   ```bash
+>   podman compose up --build
+>   podman compose -f ./samples/docker-compose/docker-compose.apache.yml up -d --build
+>   ```
+
+> [!NOTE]
+> When using `podman compose`, you may be asked which record to pull the images from.
 
 > [!NOTE]
 > Learn more about configuring this ckan docker: 
@@ -239,7 +286,7 @@ You can use the ckan [extension](https://docs.ckan.org/en/latest/extensions/tuto
   docker compose -f docker-compose.dev.yml exec ckan-dev /bin/sh -c "ckan -c /srv/app/ckan.ini generate extension --output-dir /srv/app/src_extensions"
   ```
 
-Then, answer the prompts to configure the plugin:
+Then, answer the prompts torfigure the plugin:
 
   ```bash
   Extension's name [must begin 'ckanext-']: ckanext-newextension
@@ -766,7 +813,7 @@ To have Docker Compose run automatically when you reboot a machine, you can foll
 ### Configuring `robots.txt` to Mitigate Bot and Crawler Overload
 To prevent bots and crawlers from overloading your CKAN API and causing service disruptions, it is essential to properly configure the `robots.txt` file in the root directory of your server. This file provides instructions to web crawlers about which parts of your site they are allowed to access and crawl.
 
-#### Steps to Configure `robots.txt`
+#### Steps torfigure `robots.txt`
 
 1. **Create or Edit [`nginx/setup/robots.txt`](./nginx/setup/robots.txt) in the Root Directory**:
    Ensure that the `robots.txt` file is located in the root directory of your server. This is crucial because bots typically look for this file at the root level.
