@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Add certificate for xloader
+cp /etc/nginx/certs/minica.pem /usr/local/share/ca-certificates/minica.crt
+update-ca-certificates
+
 # Set the name of the token to revoke
 TOKEN_NAME="xloader"
 

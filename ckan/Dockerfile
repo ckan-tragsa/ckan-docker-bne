@@ -28,7 +28,7 @@ RUN echo ${TZ} > /etc/timezone && \
     if ! [ /usr/share/zoneinfo/${TZ} -ef /etc/localtime ]; then cp /usr/share/zoneinfo/${TZ} /etc/localtime; fi && \
     # Install patch utility
     apt-get update && \
-    apt-get install -y patch \
+    apt-get install -y patch ca-certificates\
     # Install cron for scheduled tasks
     cron && \
     # Install CKAN extensions
