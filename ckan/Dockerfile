@@ -66,7 +66,7 @@ RUN echo ${TZ} > /etc/timezone && \
     echo "NaturalHistoryMuseum/ckanext-contact" && \
     pip3 install --no-cache-dir -e git+https://github.com/NaturalHistoryMuseum/ckanext-contact.git@v2.4.1#egg=ckanext-contact && \
     echo "ckan-tragsa/ckanext-bne" && \
-    pip3 install --no-cache-dir -e git+https://github.com/ckan-tragsa/ckanext-bne.git@v1.1.0#egg=ckanext-bne && \
+    pip3 install --no-cache-dir -e git+https://github.com/ckan-tragsa/ckanext-bne.git@v1.1.3#egg=ckanext-bne && \
     # Remove system cache
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
