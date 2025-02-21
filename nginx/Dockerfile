@@ -8,6 +8,7 @@ ENV PYCSW_PORT=8000
 ENV PYCSW_COMPOSE_SERVICE=pycsw
 ENV CKAN_COMPOSE_SERVICE=ckan
 ENV PROXY_SERVER_NAME=localhost
+ENV CKAN__MAX_RESOURCE_SIZE=100
 ENV PROXY_PYCSW_PROXY_PASS=http://${PYCSW_COMPOSE_SERVICE}:${PYCSW_PORT}
 ENV PROXY_CKAN_PROXY_PASS=http://${CKAN_COMPOSE_SERVICE}:${CKAN_PORT}
 
@@ -22,7 +23,7 @@ RUN mkdir -p ${NGINX_LOG_DIR} \
 # Copy configuration and static files
 COPY setup/nginx.conf ${NGINX_DIR}/nginx.conf
 COPY setup/default.conf.template ${NGINX_DIR}/templates/default.conf.template
-COPY setup/ckan-local.* ${NGINX_DIR}/certs/
+#COPY setup/ckan-local.* ${NGINX_DIR}/certs/
 COPY setup/html/index.html setup/html/robots.txt ${NGINX_SHARE_HTML_DIR}/
 
 # Replace $PROXY_CKAN_LOCATION and $PROXY_PYCSW_LOCATION in index.html

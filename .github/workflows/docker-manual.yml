@@ -33,7 +33,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Convert to lowercase
+      - name: Convert repo name to lowercase
         id: github_repo_lowercase
         run: INPUT=${{ env.IMAGE_NAME }}; echo "IMAGE_LOWERCASE=${INPUT,,}">>${GITHUB_OUTPUT}
 

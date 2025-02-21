@@ -13,3 +13,4 @@ Shapely==2.0.4
 
 OWSLib==0.28.1
 geojson==3.0.1
+pip_system_certs==4.0
