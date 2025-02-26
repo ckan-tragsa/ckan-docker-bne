@@ -61,14 +61,14 @@ RUN echo ${TZ} > /etc/timezone && \
     echo "mjanez/ckanext-openapi" && \
     pip3 install --no-cache-dir -e git+https://github.com/mjanez/ckanext-openapi.git@v1.0.0#egg=ckanext-openapi && \
     echo "mjanez/ckanext-schemingdcat" && \
-    pip3 install --no-cache-dir -e git+https://github.com/mjanez/ckanext-schemingdcat.git@v4.2.3#egg=ckanext_schemingdcat && \
+    pip3 install --no-cache-dir -e git+https://github.com/mjanez/ckanext-schemingdcat.git@v4.4.1#egg=ckanext_schemingdcat && \
     pip3 install --no-cache-dir -r ${APP_DIR}/src/ckanext-schemingdcat/requirements.txt && \
     echo "NaturalHistoryMuseum/ckanext-contact" && \
     pip3 install --no-cache-dir -e git+https://github.com/NaturalHistoryMuseum/ckanext-contact.git@v2.4.1#egg=ckanext-contact && \
     echo "ckan-tragsa/ckanext-bne" && \
-    pip3 install --no-cache-dir -e git+https://github.com/ckan-tragsa/ckanext-bne.git@v1.1.3#egg=ckanext-bne && \
+    pip3 install --no-cache-dir -e git+https://github.com/ckan-tragsa/ckanext-bne.git@v1.2.0#egg=ckanext-bne && \
     echo "ckan/ckanext-googleanalytics" && \
-    pip3 install --no-cache-dir -e git+https://github.com/ckan/ckanext-googleanalytics.git#egg=ckanext-googleanalytics && \
+    pip3 install --no-cache-dir -e git+https://github.com/ckan/ckanext-googleanalytics.git@v2.5.0#egg=ckanext-googleanalytics && \
     # Remove system cache
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
