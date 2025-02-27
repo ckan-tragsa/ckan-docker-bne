@@ -66,7 +66,7 @@ RUN echo ${TZ} > /etc/timezone && \
     echo "NaturalHistoryMuseum/ckanext-contact" && \
     pip3 install --no-cache-dir -e git+https://github.com/NaturalHistoryMuseum/ckanext-contact.git@v2.4.1#egg=ckanext-contact && \
     echo "ckan-tragsa/ckanext-bne" && \
-    pip3 install --no-cache-dir -e git+https://github.com/ckan-tragsa/ckanext-bne.git@v1.2.0#egg=ckanext-bne && \
+    pip3 install --no-cache-dir -e git+https://github.com/ckan-tragsa/ckanext-bne.git@v1.2.2#egg=ckanext-bne && \
     echo "ckan/ckanext-googleanalytics" && \
     pip3 install --no-cache-dir -e git+https://github.com/ckan/ckanext-googleanalytics.git@v2.5.0#egg=ckanext-googleanalytics && \
     pip3 install --no-cache-dir -r ${APP_DIR}/src/ckanext-googleanalytics/requirements.txt && \
